@@ -6,6 +6,12 @@
   <title>AfnApi - Video Streaming API</title>
   <link rel="stylesheet" href="style.css">
   <link rel="icon" href="favicon.ico" type="image/x-icon">
+  <style>
+    /* Preload styles to prevent FOUC */
+    body {
+      visibility: hidden;
+    }
+  </style>
 </head>
 <body>
     </header>
@@ -208,6 +214,12 @@
       </div>
     </footer>
   </div>
+  <script>
+    // Make body visible after styles are loaded
+    window.addEventListener('load', () => {
+      document.body.style.visibility = 'visible';
+    });
+  </script>
   <script src="script.js"></script>
 </body>
 </html>
