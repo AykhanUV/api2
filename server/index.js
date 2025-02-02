@@ -15,11 +15,16 @@ const TMDB_BASE_URL = 'https://api.themoviedb.org/3';
 
 // Example: Fetch streaming link from a dummy source (replace with actual scraping logic)
 async function getStreamingLink(tmdbId, type, season = null, episode = null) {
-  const dummyStreamingLink = `https://dummy-streaming-link.com/${type}/${tmdbId}`;
-  if (type === 'tv' &amp;&amp; season &amp;&amp; episode) {
-    return `${dummyStreamingLink}/${season}/${episode}`;
+  try {
+    const dummyStreamingLink = `https://dummy-streaming-link.com/${type}/${tmdbId}`;
+    if (type === 'tv' &amp;&amp; season &amp;&amp; episode) {
+      return `${dummyStreamingLink}/${season}/${episode}`;
+    }
+    return dummyStreamingLink;
+  } catch (error) {
+    console.error('Error in getStreamingLink:', error);
+    throw new Error('Error fetching streaming link');
   }
-  return dummyStreamingLink;
 }
 
 // Search for movies or TV shows
@@ -32,6 +37,7 @@ app.get('/search', async (req, res) => {
     });
     res.json(response.data);
   } catch (error) {
+    console.error('Error searching:', error);
     res.status(500).json({ error: 'Error fetching data from TMDB' });
   }
 });
@@ -46,6 +52,7 @@ app.get('/movie/:tmdbId', async (req, res) => {
     const streamingLink = await getStreamingLink(tmdbId, 'movie');
     res.json({ ...response.data, streamingLink });
   } catch (error) {
+    console.error('Error fetching movie details:', error);
     res.status(500).json({ error: 'Error fetching movie details' });
   }
 });
@@ -59,6 +66,7 @@ app.get('/tv/:tmdbId', async (req, res) => {
     });
     res.json(response.data);
   } catch (error) {
+    console.error('Error fetching TV show details:', error);
     res.status(500).json({ error: 'Error fetching TV show details' });
   }
 });
@@ -73,6 +81,7 @@ app.get('/tv/:tmdbId/:season/:episode', async (req, res) => {
     const streamingLink = await getStreamingLink(tmdbId, 'tv', season, episode);
     res.json({ ...response.data, streamingLink });
   } catch (error) {
+    console.error('Error fetching TV show episode details:', error);
     res.status(500).json({ error: 'Error fetching TV show episode details' });
   }
 });
