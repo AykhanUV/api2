@@ -21,12 +21,12 @@ buttons.forEach((button) => {
 });
 [tmdb, season, episode, embed].forEach((input) => {
   input.addEventListener('change', () => {
-    let base = `${window.location.origin}/embed`;
+    let base = `${window.location.origin}`; // Changed base URL
     let type = inputs.getAttribute('type');
     if (type == 'movie')
-      embed.value = `${base}/${type}/${tmdb.value}`;
+      embed.value = `${base}/${type}/${tmdb.value}`; // Removed /embed
     else
-      embed.value = `${base}/${type}/${tmdb.value}/${season.value}/${episode.value}`;
+      embed.value = `${base}/${type}/${tmdb.value}/${season.value}/${episode.value}`; // Removed /embed
     return ($('iframe').src = embed.value);
   });
 });
