@@ -821,3 +821,15 @@ iframe {
 .accordion .card-header:hover {
   background-color: #112437; /* Ensure card headers have the correct hover background color */
 }
+/* Firefox-specific fix for background color issue */
+@-moz-document url-prefix() {
+  .card-body {
+    background-color: #0f0f0f; /* Ensure card body has the correct background color in Firefox */
+  }
+  .accordion .card-header {
+    background-color: #19202c; /* Ensure card headers have the correct background color in Firefox */
+  }
+  .accordion .card-header:hover {
+    background-color: #112437; /* Ensure card headers have the correct hover background color in Firefox */
+  }
+}
