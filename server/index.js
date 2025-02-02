@@ -1,11 +1,17 @@
 import express from 'express';
 import cors from 'cors';
 import axios from 'axios';
+import path from 'path';
+import { fileURLToPath } from 'url';
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 const app = express();
 const PORT = process.env.PORT || 3000;
 
 app.use(cors());
+app.use(express.static(path.join(__dirname, '../public')));
 
 const SEVEN_XTREAM_BASE_URL = 'https://embed.7xtream.com';
 
@@ -49,6 +55,11 @@ app.get('/list/:type.json', async (req, res) => {
     console.error('Error proxying request:', error);
     res.status(500).json({ error: 'Error proxying request' });
   }
+});
+
+// Serve the index.html file for the root route
+app.get('/', (req, res) => {
+  res.sendFile(path.join(__dirname, '../public/index.html'));
 });
 
 app.listen(PORT, () => {

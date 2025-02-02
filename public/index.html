@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>P-Stream - Video Streaming API</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="body-wrapper">
+    <header class="d-flex align-items-center">
+      <div class="container">
+        <div class="wrapper d-flex align-items-center justify-content-between">
+          <a href="#" class="logo"><img src="images/Icon-1024.png"></a>
+          <ul class="d-flex">
+            <li><a href="https://discord.gg/7z6znYgrTG">Discord</a></li>
+          </ul>
+        </div>
+      </div>
+    </header>
+    <main class="">
+      <div class="container">
+        <section class="hero text-center d-flex align-items-center flex-column">
+          <h1 class="major-color" style="line-height: 1.2">
+            <span class="gardient-primary">Video Streaming API</span>
+            <br>
+            <span>With </span>
+            <span class="gardient-primary"><b>NO </b></span>
+            <span>Ads</span>
+          </h1>
+          <p class="mt-3 sub-text">
+            We offer free streaming links for movies and episodes that can
+            <br>
+            effortlessly integrated into your website through our embed links.
+          </p>
+        </section>
+      </div>
+      <section id="demo-player">
+        <div class="container">
+          <div class="wrapper">
+            <ul class="nav my-4 buttons">
+              <li class="nav-item" role="presentation">
+                <button class="nav-link active" type="movie">
+                  Movie Player
+                </button>
+              </li>
+              <li class="nav-item" role="presentation">
+                <button class="nav-link" type="tv">Series Player</button>
+              </li>
+            </ul>
+            <div class="tab-content mt-3">
+              <div class="d-flex series justify-content-center demo">
+                <div class="form-group d-flex" id="inputs" type="movie">
+                  <input id="tmdb" type="text" class="form-control text-center form-control-lg" placeholder="TMDB" static="">
+                  <input id="season" type="text" class="form-control text-center form-control-lg" placeholder="Season ID">
+                  <input id="episode" type="text" class="form-control text-center form-control-lg" placeholder="Episode ID">
+                </div>
+              </div>
+              <input type="text" class="form-control text-center" id="embed">
+              <div class="player-main mt-3">
+                <iframe allowfullscreen="" scrolling="no"></iframe>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="section-padding hidden" id="features">
+        <div class="container">
+          <h2 class="section-title">
+            <span class="major-color">Deliver an optimized</span>
+            <span class="gardient-primary">User Experience</span>
+          </h2>
+          <p class="sub-text my-3">
+            There are plenty of essential features optimized to provide the
+            best user experience.
+          </p>
+          <div class="row mt-5">
+            <div class="col shadow-md col-12 col-sm-6 col-lg-3 pb-4 ex-box more-height">
+              <div class="rounded p-3">
+                <!-- Replace with your actual lord-icon URLs -->
+                <img class="feature-ico" src="https://cdn.lordicon.com/xhsumrcb.json" alt="Auto Update">
+                <h5 class="mt-auto">Auto Update</h5>
+                <div class="text-muted">
+                  Links are automatically updated with new or better quality
+                  as soon as they are available online.
+                </div>
+              </div>
+            </div>
+            <div class="col shadow-md col-12 col-sm-6 col-lg-3 pb-4 ex-box more-height">
+              <div class="rounded p-3">
+                <!-- Replace with your actual lord-icon URLs -->
+                <img class="feature-ico" src="https://cdn.lordicon.com/ivhjpjsw.json" alt="Responsive">
+                <h5 class="mt-auto">Responsive</h5>
+                <div class="text-muted">
+                  The player is responsive and can work on every Desktop,
+                  Mobile, Tablet without problem.
+                </div>
+              </div>
+            </div>
+            <div class="col shadow-md col-12 col-sm-6 col-lg-3 pb-4 ex-box more-height">
+              <div class="rounded p-3">
+                <!-- Replace with your actual lord-icon URLs -->
+                <img class="feature-ico" src="https://cdn.lordicon.com/ydqfeguo.json" alt="High Quality">
+                <h5 class="mt-auto">High Quality</h5>
+                <div class="text-muted">
+                  The quality of the links is the latest available, mostly are
+                  1080p.
+                </div>
+              </div>
+            </div>
+            <div class="col shadow-md col-12 col-sm-6 col-lg-3 pb-4 ex-box more-height">
+              <div class="rounded p-3">
+                <!-- Replace with your actual lord-icon URLs -->
+                <img class="feature-ico" src="https://cdn.lordicon.com/qtiwxsuo.json" alt="Fast Streaming Servers">
+                <h5 class="mt-auto">Fast Streaming Servers</h5>
+                <div class="text-muted">
+                  The player includes a list of fastest streaming servers,
+                  users can easily optional.
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="section-padding" id="api">
+        <div class="container">
+          <h2 class="section-title">
+            <span class="gardient-primary">API</span> Documentation
+          </h2>
+          <div class="sub-text">
+            Detailed representation of the API endpoints for P-Stream Embed
+            includes comprehensive information regarding the available
+            methods, request formats, required parameters and optional
+            parameters.
+          </div>
+          <div class="row mt-4">
+            <div class="mx-auto col-12 col-lg-6 p-3">
+              <div class="accordion">
+                <div class="card">
+                  <div class="card-header p-2">
+                    <h5 class="mb-0">
+                      <button class="btn w-100 text-left" type="button">
+                        <b>Movie Embed URL</b>
+                      </button>
+                    </h5>
+                  </div>
+                  <div id="api-Movie" class="" aria-labelledby="api-Movie" data-parent="#api-Movie">
+                    <div class="card-body">
+                      <div class="copy-quote d-flex align-items-center">
+                        <div class="copy-text w-100">
+                          <input type="text" class="text" readonly="" value="https://YOUR-VERCEL-APP/embed/movie/{tmdb_id}">
+                          <button class="btn">
+                            <i class="bi bi-clipboard-fill"></i>
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="card">
+                  <div class="card-header p-2">
+                    <h5 class="mb-0">
+                      <span class="btn w-100 text-left" aria-controls="api-tvshows"><b>TV Shows Embed URL</b></span>
+                    </h5>
+                  </div>
+                  <div id="api-tvshows">
+                    <div class="card-body">
+                      <div class="copy-quote d-flex align-items-center">
+                        <div class="copy-text w-100">
+                          <input type="text" class="text" readonly="" value="https://YOUR-VERCEL-APP/embed/tv/{tmdb_id}/{season_number}/{episode_number}">
+                          <button class="btn">
+                            <i class="bi bi-clipboard-fill"></i>
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row mt-4 pt-2">
+            <div class="mx-auto col-12 col-lg-6 p-3">
+              <div class="accordion">
+                <div class="card">
+                  <div class="card-header p-2">
+                    <h5 class="mb-0">
+                      <button class="btn w-100 text-left" type="button">
+                        <b>Example Usage</b>
+                      </button>
+                    </h5>
+                  </div>
+                  <div id="api-Movie" class="" aria-labelledby="api-Movie" data-parent="#api-Movie">
+                    <div class="card-body">
+                      <div class="copy-quote d-flex align-items-center">
+                        <div class="copy-text w-100">
+                          <input type="text" class="text" readonly="" value="<iframe allowfullscreen scrolling='no' src='https://YOUR-VERCEL-APP/embed/tv/456/12/2'></iframe>">
+                          <button class="btn">
+                            <i class="bi bi-clipboard-fill"></i>
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer class="py-3" id="footer">
+      <div class="container">
+        <div class="d-flex flex-wrap flex-sm-nowrap justify-content-center justify-content-sm-between mt-3 mb-2">
+          <span>© 2025 P-Stream. All rights reserved.</span>
+        </div>
+      </div>
+    </footer>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
